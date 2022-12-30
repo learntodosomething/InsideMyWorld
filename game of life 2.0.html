@@ -1,0 +1,197 @@
+
+<html>
+    <head>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+    
+    var gameOfLife = document.createElement('div');
+    gameOfLife.innerHTML = '<canvas id="gameOfLifeCanvas" width="500" height="500"></canvas>';
+    document.body.appendChild(gameOfLife);
+    
+    var canvas = document.getElementById('gameOfLifeCanvas');
+    var ctx = canvas.getContext('2d');
+    
+    var grid = [];
+    var gridSize = 100;
+    var cellSize = 5;
+    
+    function initGrid() {
+      for (var i = 0; i < gridSize; i++) {
+        grid[i] = [];
+        for (var j = 0; j < gridSize; j++) {
+          grid[i][j] = Math.random() > 0.5;
+        }
+      }
+    }
+    
+    function drawGrid() {
+      for (var i = 0; i < gridSize; i++) {
+        for (var j = 0; j < gridSize; j++) {
+          if (grid[i][j]) {
+            ctx.fillStyle = '#000000';
+          } else {
+            ctx.fillStyle = '#FFFFFF';
+          }
+          ctx.fillRect(i * cellSize, j * cellSize, cellSize, cellSize);
+        }
+      }
+    }
+    
+    function updateGrid() {
+      var newGrid = [];
+      for (var i = 0; i < gridSize; i++) {
+        newGrid[i] = [];
+        for (var j = 0; j < gridSize; j++) {
+          var neighbors = 0;
+          if (i > 0 && j > 0 && grid[i - 1][j - 1]) {
+            neighbors++;
+          }
+          if (i > 0 && grid[i - 1][j]) {
+            neighbors++;
+          }
+          if (i > 0 && j < gridSize - 1 && grid[i - 1][j + 1]) {
+            neighbors++;
+          }
+          if (j > 0 && grid[i][j - 1]) {
+            neighbors++;
+          }
+          if (j < gridSize - 1 && grid[i][j + 1]) {
+            neighbors++;
+          }
+          if (i < gridSize - 1 && j > 0 && grid[i + 1][j - 1]) {
+            neighbors++;
+          }
+          if (i < gridSize - 1 && grid[i + 1][j]) {
+            neighbors++;
+          }
+          if (i < gridSize - 1 && j < gridSize - 1 && grid[i + 1][j + 1]) {
+            neighbors++;
+          }
+          if (grid[i][j]) {
+            if (neighbors < 2 || neighbors > 3) {
+              newGrid[i][j] = false;
+            } else {
+              newGrid[i][j] = true;
+            }
+          } else {
+            if (neighbors === 3) {
+              newGrid[i][j] = true;
+            } else {
+              newGrid[i][j] = false;
+            }
+          }
+        }
+      }
+      grid = newGrid;
+    }
+    
+    function gameOfLifeLoop() {
+      updateGrid();
+      drawGrid();
+      setTimeout(gameOfLifeLoop, 100);
+    }
+    
+    initGrid();
+    gameOfLifeLoop();
+    
+    var gameOfLifeButton = document.createElement('div');
+    gameOfLifeButton.innerHTML = '<button id="gameOfLifeButton">Restart</button>';
+    document.body.appendChild(gameOfLifeButton);
+    
+    var gameOfLifeButton = document.getElementById('gameOfLifeButton');
+    gameOfLifeButton.addEventListener('click', function() {
+      initGrid();
+      gameOfLifeLoop();
+    });
+    
+    var gameOfLifeStopButton = document.createElement('div');
+    gameOfLifeStopButton.innerHTML = '<button id="gameOfLifeStopButton">Stop</button>';
+    document.body.appendChild(gameOfLifeStopButton);
+    
+    var gameOfLifeStopButton = document.getElementById('gameOfLifeStopButton');
+    gameOfLifeStopButton.addEventListener('click', function() {
+      updateGrid = function() {};
+    });
+    
+    var gameOfLifeStartButton = document.createElement('div');
+    gameOfLifeStartButton.innerHTML = '<button id="gameOfLifeStartButton">Start</button>';
+    document.body.appendChild(gameOfLifeStartButton);
+    
+    var gameOfLifeStartButton = document.getElementById('gameOfLifeStartButton');
+    gameOfLifeStartButton.addEventListener('click', function() {
+      updateGrid = function() {
+        var newGrid = [];
+        for (var i = 0; i < gridSize; i++) {
+          newGrid[i] = [];
+          for (var j = 0; j < gridSize; j++) {
+            var neighbors = 0;
+            if (i > 0 && j > 0 && grid[i - 1][j - 1]) {
+              neighbors++;
+            }
+            if (i > 0 && grid[i - 1][j]) {
+              neighbors++;
+            }
+            if (i > 0 && j < gridSize - 1 && grid[i - 1][j + 1]) {
+              neighbors++;
+            }
+            if (j > 0 && grid[i][j - 1]) {
+              neighbors++;
+            }
+            if (j < gridSize - 1 && grid[i][j + 1]) {
+              neighbors++;
+            }
+            if (i < gridSize - 1 && j > 0 && grid[i + 1][j - 1]) {
+              neighbors++;
+            }
+            if (i < gridSize - 1 && grid[i + 1][j]) {
+              neighbors++;
+            }
+            if (i < gridSize - 1 && j < gridSize - 1 && grid[i + 1][j + 1]) {
+              neighbors++;
+            }
+            if (grid[i][j]) {
+              if (neighbors < 2 || neighbors > 3) {
+                newGrid[i][j] = false;
+              } else {
+                newGrid[i][j] = true;
+              }
+            } else {
+              if (neighbors === 3) {
+                newGrid[i][j] = true;
+              } else {
+                newGrid[i][j] = false;
+              }
+            }
+          }
+        }
+        grid = newGrid;
+      };
+    });
+    
+    var gameOfLifeCanvas = document.getElementById('gameOfLifeCanvas');
+    gameOfLifeCanvas.addEventListener('click', function(e) {
+      var x = Math.floor(e.offsetX / cellSize);
+      var y = Math.floor(e.offsetY / cellSize);
+      grid[x][y] = !grid[x][y];
+    });
+    
+    var gameOfLifeEraseButton = document.createElement('div');
+    gameOfLifeEraseButton.innerHTML = '<button id="gameOfLifeEraseButton">Erase</button>';
+    document.body.appendChild(gameOfLifeEraseButton);
+    
+    var gameOfLifeEraseButton = document.getElementById('gameOfLifeEraseButton');
+    gameOfLifeEraseButton.addEventListener('click', function() {
+      for (var i = 0; i < gridSize; i++) {
+        for (var j = 0; j < gridSize; j++) {
+          grid[i][j] = false;
+        }
+      }
+    });
+    });
+
+    
+    </script>
+    </head>
+    <body style="margin: 0;">
+    </body>
+</html>
