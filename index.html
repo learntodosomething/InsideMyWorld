@@ -1,197 +1,187 @@
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-    
-    var gameOfLife = document.createElement('div');
-    gameOfLife.innerHTML = '<canvas id="gameOfLifeCanvas" width="500" height="500"></canvas>';
-    document.body.appendChild(gameOfLife);
-    
-    var canvas = document.getElementById('gameOfLifeCanvas');
-    var ctx = canvas.getContext('2d');
-    
-    var grid = [];
-    var gridSize = 100;
-    var cellSize = 5;
-    
-    function initGrid() {
-      for (var i = 0; i < gridSize; i++) {
-        grid[i] = [];
-        for (var j = 0; j < gridSize; j++) {
-          grid[i][j] = Math.random() > 0.5;
-        }
-      }
-    }
-    
-    function drawGrid() {
-      for (var i = 0; i < gridSize; i++) {
-        for (var j = 0; j < gridSize; j++) {
-          if (grid[i][j]) {
-            ctx.fillStyle = '#000000';
-          } else {
-            ctx.fillStyle = '#FFFFFF';
-          }
-          ctx.fillRect(i * cellSize, j * cellSize, cellSize, cellSize);
-        }
-      }
-    }
-    
-    function updateGrid() {
-      var newGrid = [];
-      for (var i = 0; i < gridSize; i++) {
-        newGrid[i] = [];
-        for (var j = 0; j < gridSize; j++) {
-          var neighbors = 0;
-          if (i > 0 && j > 0 && grid[i - 1][j - 1]) {
-            neighbors++;
-          }
-          if (i > 0 && grid[i - 1][j]) {
-            neighbors++;
-          }
-          if (i > 0 && j < gridSize - 1 && grid[i - 1][j + 1]) {
-            neighbors++;
-          }
-          if (j > 0 && grid[i][j - 1]) {
-            neighbors++;
-          }
-          if (j < gridSize - 1 && grid[i][j + 1]) {
-            neighbors++;
-          }
-          if (i < gridSize - 1 && j > 0 && grid[i + 1][j - 1]) {
-            neighbors++;
-          }
-          if (i < gridSize - 1 && grid[i + 1][j]) {
-            neighbors++;
-          }
-          if (i < gridSize - 1 && j < gridSize - 1 && grid[i + 1][j + 1]) {
-            neighbors++;
-          }
-          if (grid[i][j]) {
-            if (neighbors < 2 || neighbors > 3) {
-              newGrid[i][j] = false;
-            } else {
-              newGrid[i][j] = true;
+        <link rel="Icon" type="x-icon" href="https://emojipedia-us.s3.amazonaws.com/source/noto-emoji-animations/344/money-with-wings_1f4b8.gif">
+        <title>Pénzváltó</title>
+        <style>
+            body {
+                background-image: url('https://i.vimeocdn.com/video/665321732-433aa5f7a7bbafddb6db23fd29b22229ae3c879ca829ba23e0f31b3132c57b2f-d_640x360.jpg');
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
             }
-          } else {
-            if (neighbors === 3) {
-              newGrid[i][j] = true;
-            } else {
-              newGrid[i][j] = false;
+            .oldal{
+                text-align: center;
             }
-          }
-        }
-      }
-      grid = newGrid;
-    }
-    
-    function gameOfLifeLoop() {
-      updateGrid();
-      drawGrid();
-      setTimeout(gameOfLifeLoop, 100);
-    }
-    
-    initGrid();
-    gameOfLifeLoop();
-    
-    var gameOfLifeButton = document.createElement('div');
-    gameOfLifeButton.innerHTML = '<button id="gameOfLifeButton">Restart</button>';
-    document.body.appendChild(gameOfLifeButton);
-    
-    var gameOfLifeButton = document.getElementById('gameOfLifeButton');
-    gameOfLifeButton.addEventListener('click', function() {
-      initGrid();
-      gameOfLifeLoop();
-    });
-    
-    var gameOfLifeStopButton = document.createElement('div');
-    gameOfLifeStopButton.innerHTML = '<button id="gameOfLifeStopButton">Stop</button>';
-    document.body.appendChild(gameOfLifeStopButton);
-    
-    var gameOfLifeStopButton = document.getElementById('gameOfLifeStopButton');
-    gameOfLifeStopButton.addEventListener('click', function() {
-      updateGrid = function() {};
-    });
-    
-    var gameOfLifeStartButton = document.createElement('div');
-    gameOfLifeStartButton.innerHTML = '<button id="gameOfLifeStartButton">Start</button>';
-    document.body.appendChild(gameOfLifeStartButton);
-    
-    var gameOfLifeStartButton = document.getElementById('gameOfLifeStartButton');
-    gameOfLifeStartButton.addEventListener('click', function() {
-      updateGrid = function() {
-        var newGrid = [];
-        for (var i = 0; i < gridSize; i++) {
-          newGrid[i] = [];
-          for (var j = 0; j < gridSize; j++) {
-            var neighbors = 0;
-            if (i > 0 && j > 0 && grid[i - 1][j - 1]) {
-              neighbors++;
+            .table{
+                margin-left: auto;
+                margin-right: auto;
             }
-            if (i > 0 && grid[i - 1][j]) {
-              neighbors++;
+            div.topcontainer{
+                text-align: center;
+                width: 300px;
+                margin: auto;
+                padding: 6px 0px 0px 0px;
             }
-            if (i > 0 && j < gridSize - 1 && grid[i - 1][j + 1]) {
-              neighbors++;
+            .form{
+                border: 5px outset rgb(78, 98, 127);
+                background-color: gray;
+                text-align: center;
             }
-            if (j > 0 && grid[i][j - 1]) {
-              neighbors++;
+            .foglal{
+                width: 20px;
             }
-            if (j < gridSize - 1 && grid[i][j + 1]) {
-              neighbors++;
+            .logo_space{
+                min-height: 70px;
+                font-size: 60px;
+                background-image: url('https://img.freepik.com/premium-photo/shiny-yellow-leaf-gold-foil-texture_38679-1070.jpg?w=2000');
+                background-clip: text;
+                color: transparent;
+                
             }
-            if (i < gridSize - 1 && j > 0 && grid[i + 1][j - 1]) {
-              neighbors++;
-            }
-            if (i < gridSize - 1 && grid[i + 1][j]) {
-              neighbors++;
-            }
-            if (i < gridSize - 1 && j < gridSize - 1 && grid[i + 1][j + 1]) {
-              neighbors++;
-            }
-            if (grid[i][j]) {
-              if (neighbors < 2 || neighbors > 3) {
-                newGrid[i][j] = false;
-              } else {
-                newGrid[i][j] = true;
-              }
-            } else {
-              if (neighbors === 3) {
-                newGrid[i][j] = true;
-              } else {
-                newGrid[i][j] = false;
-              }
-            }
-          }
-        }
-        grid = newGrid;
-      };
-    });
-    
-    var gameOfLifeCanvas = document.getElementById('gameOfLifeCanvas');
-    gameOfLifeCanvas.addEventListener('click', function(e) {
-      var x = Math.floor(e.offsetX / cellSize);
-      var y = Math.floor(e.offsetY / cellSize);
-      grid[x][y] = !grid[x][y];
-    });
-    
-    var gameOfLifeEraseButton = document.createElement('div');
-    gameOfLifeEraseButton.innerHTML = '<button id="gameOfLifeEraseButton">Erase</button>';
-    document.body.appendChild(gameOfLifeEraseButton);
-    
-    var gameOfLifeEraseButton = document.getElementById('gameOfLifeEraseButton');
-    gameOfLifeEraseButton.addEventListener('click', function() {
-      for (var i = 0; i < gridSize; i++) {
-        for (var j = 0; j < gridSize; j++) {
-          grid[i][j] = false;
-        }
-      }
-    });
-    });
+            .gomb{
+                outline: 0;
+                cursor: pointer;
+                color: white;
+                background-color: rgb(84, 105, 212);
+                box-shadow: rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 12%) 0px 1px 1px 0px, rgb(84 105 212) 0px 0px 0px 1px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(60 66 87 / 8%) 0px 2px 5px 0px;
+                border-radius: 4px;
+                font-size: 14px;
+                font-weight: 500;
+                padding: 4px 8px;
+                display: inline-block;
+                min-height: 28px;
+                transition: background-color .24s,box-shadow .24s; 
+                }
+                .font{
+                    font-family: Courier New;
+                    font-size: 20px;
+                }
+        </style>
 
-    
-    </script>
+        <script> 
+
+            function myFunction() {
+                parseFloat(ar).toFixed(2);
+                document.getElementById("osszeg").innerHTML = "Összeg: " + ar.toFixed(2);
+            }
+
+            function Gomb(){
+
+                a = penz.value;
+                moy = jelszo.value;
+                var extra1 = 1;
+                var extra2 = 1;
+
+                if (moy === "qwert"){
+                    extra1 = 10;
+                    extra2 = 10.2;
+                } 
+
+                if (moy === "qwerty"){
+                    extra1 = 10;
+                    extra2 = 10.3;
+                }
+
+                if (moy === "yol0"){
+                    extra1 = 10;
+                    extra2 = 10.6;
+                }
+                
+                if(rol_EUR.checked == true){
+                    ar = Number(a)
+                    if(re_EUR.checked == true){
+                        ar;
+                        myFunction()
+                    }
+                    if(re_HUF.checked == true ){
+                        ar *= (409.29 / extra1) * extra2 ;
+                        myFunction()
+                    }
+                    if(re_USD.checked == true){
+                        ar *= (1.0008 / extra1) * extra2;
+                        myFunction()
+                    }
+                }
+
+                if(rol_HUF.checked == true){
+                    ar = Number(a)
+                    if(re_EUR.checked == true){
+                        ar *= (0.00245 / extra1) * extra2 ;
+                        myFunction()
+                    }
+                    if(re_HUF.checked == true ){
+                        ar;
+                        myFunction()
+                    }
+                    if(re_USD.checked == true){
+                        ar *= (0.00245 / extra1) * extra2;
+                        myFunction()
+                    }
+                    
+                }
+
+                if(rol_USD.checked == true){
+                    ar = Number(a)
+                    if(re_EUR.checked == true){
+                        ar *= (0.9989 / extra1) * extra2;
+                        myFunction()
+                    }
+                    if(re_HUF.checked == true ){
+                        ar *= (407.625 / extra1) * extra2;
+                        myFunction()
+                    }
+                    if(re_USD.checked == true){
+                        ar;
+                        myFunction()
+                    }    
+                }
+            }
+
+        </script>
     </head>
-    <body style="margin: 0;">
+
+    <!--      Vege a fejlecnek        -->
+
+    <body>
+        <div class="topcontainer">
+            <div class="logo_space">Pénzváltó</div>
+            <div class="form">
+
+                <label>Név:</label>
+                <input type="text"><br>
+
+                <label>Összeg:</label>
+                <input type="number" id="penz"><br>
+
+                <table class="table">
+                    <tr>
+                        <td><label>Miről:</label></td>
+                        <td class="foglal"></td>
+                        <td><label>Mire:</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name="asd" id="rol_EUR"><label class="font">EUR</label></td>
+                        <td></td>
+                        <td><input type="radio" name="dsa" id="re_EUR"><label class="font">EUR</label></td>   
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name="asd" id="rol_HUF"><label class="font">HUF</label></td>
+                        <td></td>
+                        <td><input type="radio" name="dsa" id="re_HUF"><label class="font">HUF</label></td> 
+                    </tr>
+                        <td><input type="radio" name="asd" id="rol_USD"><label class="font">USD</label></td>
+                        <td></td>
+                        <td><input type="radio" name="dsa" id="re_USD"><label class="font">USD</label></td> 
+                </table><br>
+                <label>Kedvezményi jelszó: </label><br>
+                <input type="password" id="jelszo"><br><br>
+
+                <button class="gomb" onclick="Gomb()">Váltás</button><br><br><br>
+                            
+                <label id="osszeg">Összeg</label>
+                
+            </div>
+        </div>
     </body>
 </html>
