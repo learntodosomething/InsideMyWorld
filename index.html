@@ -1,49 +1,26 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>HTTP Request Example</title>
-  </head>
-  <body>
-    <button id="btn-make-request">Make Request</button>
-    <div id="response"></div>
+<head>
+    <title>Számkitalálós játék</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script> 
+</head>
+<body>
+    <button class="gomb" onclick="ismet()" style="padding: 20px 40px;">Újra!</button>
+    <button class="gomb" onclick="help()" style="padding: 20px 30px;">Segítség</button>
+    <br>
     
-    <script>
-      const btn = document.getElementById('btn-make-request');
-      const responseDiv = document.getElementById('response');
-      
-      function makeRequest(url) {
-        return new Promise((resolve, reject) => {
-          const xhr = new XMLHttpRequest();
-          xhr.open('GET', url);
-          xhr.onload = function() {
-            if (this.status >= 200 && this.status < 300) {
-              resolve(xhr.response);
-            } else {
-              reject({
-                status: this.status,
-                statusText: xhr.statusText
-              });
-            }
-          };
-          xhr.onerror = function() {
-            reject({
-              status: this.status,
-              statusText: xhr.statusText
-            });
-          };
-          xhr.send();
-        });
-      }
-      
-      btn.addEventListener('click', () => {
-        makeRequest('https://example.com')
-          .then(function(response) {
-            responseDiv.innerHTML = response;
-          })
-          .catch(function(error) {
-            console.error(error);
-          });
-      });
-    </script>
-  </body>
+    <label style="font-size: 20px;">Tipp: </label>
+    <input type="text" id="megadas" class="css-form-ex-one" placeholder="Adj meg egy számot">
+    <button class="gomb" onclick="Tippeles()">Tippelés</button><br>
+
+    <label id="kicsi" class="forma">Kisebb </label>
+    <label id="nagy" class="forma">Nagyobb</label>
+    <br>
+
+    <img src="number-line.png" onmousemove="Koord(event)" onclick="Megad()" /><br>
+
+    <label>Tipp: </label>
+    <label id="szam"></label>
+    <label id="neve">szám: </label>
+</body>
 </html>
