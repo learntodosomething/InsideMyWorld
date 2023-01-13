@@ -2,198 +2,198 @@
 <head>
 </head>
 <body>
-// Kilépés
+// Kilépés<br>
 Application.Exit();
 <br>
-// Csere
+// Csere<br>
 string s = textBox1.Text;
 textBox1.Text = textBox2.Text;
 textBox2.Text = s;
 <br>
-// Array
+// Array<br>
 int[] a = new int[5];
 <br>
-// Az a-array, x-benne szereplő értékek
+// Az a-array, x-benne szereplő értékek<br>
 foreach (int x in a)
 <br>
-// Double típussá alakítás
+// Double típussá alakítás<br>
 double ar1 = Convert.ToDouble(textBox1.Text);
 <br>
-// Int típus
+// Int típus<br>
 int tippeltSzam = Convert.ToInt32(textBox1.Text);
 int tipp = int.Parse(textBox1.Text);
 <br>
-// String típus
+// String típus<br>
 string str = value.ToString();
 <br>
-// Ha textbox üres
+// Ha textbox üres<br>
 if (textbox.Text.Length == 0)
 <br>
-// Kerekítés
+// Kerekítés<br>
 osszes = Math.Round(osszes, 2);
 <br>
-// Gomb helyének változtatása                       X                    Y
+// Gomb helyének változtatása                      X                    Y<br>
 button1.Location = new Point(this.ClientSize.Width - button1.Size.Width, 0);
 <br>
-// RadioButton jelölve
+// RadioButton jelölve<br>
 radioButton1.Checked
 <br>
-// Scrollbar érték
+// Scrollbar érték<br>
 scrollValue = hScrollBar1.Value;
 <br>
-// Listába érték adás
+// Listába érték adás<br>
 listBox1.Items.Insert(0, textBox1.Text);
 <br>
-// Listához nem csak szöveg hanem class is
+// Listához nem csak szöveg hanem class is<br>
 listBox1.Items.Add(new Kutya(textBox1.Text));
 <br>
-// Szöveg hozzáadás
+// Szöveg hozzáadás<br>
 textBox1.AppendText("");
 <br>
-// Új sor ha \n nem megy
-Environment.NewLine
+// Új sor ha \n nem megy<br>
+Environment.NewLine<br>
 "\r\n"
 <br>
-// Öröklés metódus
+// Öröklés metódus<br>
 class NagyFenykepalbum : Fenykepalbum
 <br>
-// Ablak meretenek beallitasa
+// Ablak meretenek beallitasa<br>
 this.ClientSize = new Size(10 * MERET, 10 * MERET);
 <br>
-// Kijelölt listbox elem törlése
+// Kijelölt listbox elem törlése<br>
 listBox1.Items.RemoveAt(listBox1.SelectedIndex);
 <br>
 =====================================================================================================================================================
 <br>
-// Ha az ablak más méreteket kap
-protected override void OnResize(EventArgs e)
-{
-    base.OnResize(e);
-    ...
-}
+// Ha az ablak más méreteket kap<br>
+protected override void OnResize(EventArgs e)<br>
+{<br>
+    base.OnResize(e);<br>
+    ...<br>
+}<br>
 <br>
-//random szám generálás
-Random randgen = new Random();
-int r;
-r = randgen.Next(1, 91);
-<br>
-// Checkbox értéke és kattinthatósága 
-checkBox4.Checked = false;
-checkBox1.Enabled = false;
-<br>
-// Egy kódot a többi kódban
-private void UpdateTotalPrice()
-{
-    ...
-}
-<br>
-private void checkBox1_CheckedChanged(object sender, EventArgs e)
-{
-    UpdateTotalPrice();
-}
-<br>
-// Class-ból való meghívás
-Haromszog h = new Haromszog("értékek");
-//Mikor kell értéket használni a másik class-ból elé kell tenni a meghívót
-h.GetA()
-<br>
-// Ennek legyen egy kívülről nem látható adatmezője: lapokSzama, melyet egy publikus GetLapokSzama metódussal lehessen lekérdezni.
-private int lapokSzama;
-public int GetLapokSzama()
-{
-    return lapokSzama;
-}
-<br>
+//random szám generálás<br>
+Random randgen = new Random();<br>
+int r;<br>
+r = randgen.Next(1, 91);<br>
+<br><br>
+// Checkbox értéke és kattinthatósága <br>
+checkBox4.Checked = false;<br>
+checkBox1.Enabled = false;<br>
+<br><br>
+// Egy kódot a többi kódban<br>
+private void UpdateTotalPrice()<br>
+{<br>
+    ...<br>
+}<br>
+<br><br>
+private void checkBox1_CheckedChanged(object sender, EventArgs e)<br>
+{<br>
+    UpdateTotalPrice();<br>
+}<br>
+<br><br>
+// Class-ból való meghívás<br>
+Haromszog h = new Haromszog("értékek");<br>
+//Mikor kell értéket használni a másik class-ból elé kell tenni a meghívót<br>
+h.GetA()<br>
+<br><br>
+// Ennek legyen egy kívülről nem látható adatmezője: lapokSzama, melyet egy publikus GetLapokSzama metódussal lehessen lekérdezni.<br>
+private int lapokSzama;<br>
+public int GetLapokSzama()<br>
+{<br>
+    return lapokSzama;<br>
+}<br>
+<br><br>
 //Az osztály alapértelmezett (paraméterek nélküli) konstruktora 16 lapból álló
 albumot hozzon létre. Az osztályhoz tartozzon még egy konstruktor, amely segítségével
 tetszőleges számú lapból álló album létrehozható.
-public Fenykepalbum()
-{
-    _lapokSzama = 16;
-}
-public Fenykepalbum(int lapokSzama)
-{
-    _lapokSzama = lapokSzama;
-}
-<br>
-// legyen egy konstruktora két paraméterrel
-public Pont(double x, double y)
-{
-    this.x = x;
-    this.y = y;
-}
-<br>
+public Fenykepalbum()<br>
+{<br>
+    _lapokSzama = 16;<br>
+}<br>
+public Fenykepalbum(int lapokSzama)<br>
+{<br>
+    _lapokSzama = lapokSzama;<br>
+}<br>
+<br><br>
+// legyen egy konstruktora két paraméterrel<br>
+public Pont(double x, double y)<br>
+{<br>
+    this.x = x;<br>
+    this.y = y;<br>
+}<br>
+<br><br>
 
-// Gombok létrehozása
-private Button[,] jatektabla = new Button[10, 10];   // jatektabla
-private const int MERET = 40;  // nyomogombok merete
+// Gombok létrehozása<br>
+private Button[,] jatektabla = new Button[10, 10];   // jatektabla<br>
+private const int MERET = 40;  // nyomogombok merete<br>
+<br>
+for (int sor = 0; sor < 10; sor++)<br>
+{<br>
+    for (int oszlop = 0; oszlop < 10; oszlop++)<br>
+    {<br>
+        jatektabla[sor, oszlop] = new Button();<br>
+        jatektabla[sor, oszlop].Location = new Point(oszlop * MERET, sor * MERET);<br>
+        jatektabla[sor, oszlop].Size = new Size(MERET, MERET);<br>
+        jatektabla[sor, oszlop].Font = new Font("Arial", MERET / 2);        <br>
+	//Esemény meghívása kattintásra<br>
+	jatektabla[sor, oszlop].Click += new EventHandler(Kattintas);<br>
+        this.Controls.Add(jatektabla[sor, oszlop]);<br>
+    }<br>
+}<br>
+<br><br>
+//VAGY<br>
+<br><br>
+Button[] gombok = new Button[25];<br>
+<br>
+int k = 1;<br>
+for (int i = 0; i < 25; i++)<br>
+{<br>
+	gombok[i] = new Button();<br>
+	gombok[i].Size = new Size(60, 60);<br>
+	gombok[i].Location = new Point(i % 5 * 60, i / 5 * 60 + 45);<br>
+	gombok[i].Text = k.ToString();<br>
+	k++;<br>
+	gombok[i].Font = new Font("Arial", 20);<br>
+	gombok[i].Parent = this;<br>
+	gombok[i].Click += new EventHandler(Kattintas);<br>
+}<br>
 
-for (int sor = 0; sor < 10; sor++)
-{
-    for (int oszlop = 0; oszlop < 10; oszlop++)
-    {
-        jatektabla[sor, oszlop] = new Button();
-        jatektabla[sor, oszlop].Location = new Point(oszlop * MERET, sor * MERET);
-        jatektabla[sor, oszlop].Size = new Size(MERET, MERET);
-        jatektabla[sor, oszlop].Font = new Font("Arial", MERET / 2);        
-	//Esemény meghívása kattintásra
-	jatektabla[sor, oszlop].Click += new EventHandler(Kattintas);
-        this.Controls.Add(jatektabla[sor, oszlop]);
-    }
-}
+<br><br>
+//Ez a kód hívódik meg a gomb megnyomásánál<br>
+private void Kattintas(object sender, EventArgs e)<br>
+{<br>
+    //kód<br>
+}<br>
+<br><br>
+// Itt a "Button" mint objektum létezik, így a sender átalakítja hogy lehessen<br>
+// használni a kódban mint "button"<br>
+Button button = (Button)sender;<br>
+button.Enabled = false;<br>
+<br><br>
+// Egy felülírt ToString() metódus<br>
+public override string ToString()<br>
+{<br>
+    return GetType().Name[0] + " " + nev; <br>
+}<br>
+<br><br>
+// Meghívják az ősosztály konstruktorát<br>
+public Macska(string nev) : base(nev)<br>
+{<br>
+}<br>
 <br>
-//VAGY
-<br>
-Button[] gombok = new Button[25];
-
-int k = 1;
-for (int i = 0; i < 25; i++)
-{
-	gombok[i] = new Button();
-	gombok[i].Size = new Size(60, 60);
-	gombok[i].Location = new Point(i % 5 * 60, i / 5 * 60 + 45);
-	gombok[i].Text = k.ToString();
-	k++;
-	gombok[i].Font = new Font("Arial", 20);
-	gombok[i].Parent = this;
-	gombok[i].Click += new EventHandler(Kattintas);
-}
-
-<br>
-//Ez a kód hívódik meg a gomb megnyomásánál
-private void Kattintas(object sender, EventArgs e)
-{
-    //kód
-}
-<br>
-// Itt a "Button" mint objektum létezik, így a sender átalakítja hogy lehessen
-// használni a kódban mint "button"
-Button button = (Button)sender;
-button.Enabled = false;
-<br>
-// Egy felülírt ToString() metódus
-public override string ToString()
-{
-    return GetType().Name[0] + " " + nev; 
-}
-<br>
-// Meghívják az ősosztály konstruktorát
-public Macska(string nev) : base(nev)
-{
-}
-<br>
-// Metódus
-public string Nyavog()
-{
-    return nev + " nyavog... miau...";
-}
-<br>
-// a Macska osztály tartalmazzon egy Nyavog() metódust, amely a következő
-// karakterláncot adja vissza: MacskaNeve + ” nyávog... miau ...” 
-public string Nyavog()
-{
-    return nev + " Nyávog... miau...";
-}
+// Metódus<br>
+public string Nyavog()<br>
+{<br>
+    return nev + " nyavog... miau...";<br>
+}<br>
+<br><br>
+// a Macska osztály tartalmazzon egy Nyavog() metódust, amely a következő<br>
+// karakterláncot adja vissza: MacskaNeve + ” nyávog... miau ...” <br>
+public string Nyavog()<br>
+{<br>
+    return nev + " Nyávog... miau...";<br>
+}<br>
 
 
 </body>
