@@ -4,106 +4,106 @@
 <body>
 // Kilépés
 Application.Exit();
-
+<br>
 // Csere
 string s = textBox1.Text;
 textBox1.Text = textBox2.Text;
 textBox2.Text = s;
-
+<br>
 // Array
 int[] a = new int[5];
-
+<br>
 // Az a-array, x-benne szereplő értékek
 foreach (int x in a)
-
+<br>
 // Double típussá alakítás
 double ar1 = Convert.ToDouble(textBox1.Text);
-
+<br>
 // Int típus
 int tippeltSzam = Convert.ToInt32(textBox1.Text);
 int tipp = int.Parse(textBox1.Text);
-
+<br>
 // String típus
 string str = value.ToString();
-
+<br>
 // Ha textbox üres
 if (textbox.Text.Length == 0)
-
+<br>
 // Kerekítés
 osszes = Math.Round(osszes, 2);
-
+<br>
 // Gomb helyének változtatása                       X                    Y
 button1.Location = new Point(this.ClientSize.Width - button1.Size.Width, 0);
-
+<br>
 // RadioButton jelölve
 radioButton1.Checked
-
+<br>
 // Scrollbar érték
 scrollValue = hScrollBar1.Value;
-
+<br>
 // Listába érték adás
 listBox1.Items.Insert(0, textBox1.Text);
-
+<br>
 // Listához nem csak szöveg hanem class is
 listBox1.Items.Add(new Kutya(textBox1.Text));
-
+<br>
 // Szöveg hozzáadás
 textBox1.AppendText("");
-
+<br>
 // Új sor ha \n nem megy
 Environment.NewLine
 "\r\n"
-
+<br>
 // Öröklés metódus
 class NagyFenykepalbum : Fenykepalbum
-
+<br>
 // Ablak meretenek beallitasa
 this.ClientSize = new Size(10 * MERET, 10 * MERET);
-
+<br>
 // Kijelölt listbox elem törlése
 listBox1.Items.RemoveAt(listBox1.SelectedIndex);
-
+<br>
 =====================================================================================================================================================
-
+<br>
 // Ha az ablak más méreteket kap
 protected override void OnResize(EventArgs e)
 {
     base.OnResize(e);
     ...
 }
-
+<br>
 //random szám generálás
 Random randgen = new Random();
 int r;
 r = randgen.Next(1, 91);
-
+<br>
 // Checkbox értéke és kattinthatósága 
 checkBox4.Checked = false;
 checkBox1.Enabled = false;
-
+<br>
 // Egy kódot a többi kódban
 private void UpdateTotalPrice()
 {
     ...
 }
-
+<br>
 private void checkBox1_CheckedChanged(object sender, EventArgs e)
 {
     UpdateTotalPrice();
 }
-
+<br>
 // Class-ból való meghívás
 Haromszog h = new Haromszog("értékek");
 //Mikor kell értéket használni a másik class-ból elé kell tenni a meghívót
 h.GetA()
-
+<br>
 // Ennek legyen egy kívülről nem látható adatmezője: lapokSzama, melyet egy publikus GetLapokSzama metódussal lehessen lekérdezni.
 private int lapokSzama;
 public int GetLapokSzama()
 {
     return lapokSzama;
 }
-
+<br>
 //Az osztály alapértelmezett (paraméterek nélküli) konstruktora 16 lapból álló
 albumot hozzon létre. Az osztályhoz tartozzon még egy konstruktor, amely segítségével
 tetszőleges számú lapból álló album létrehozható.
@@ -115,14 +115,14 @@ public Fenykepalbum(int lapokSzama)
 {
     _lapokSzama = lapokSzama;
 }
-
+<br>
 // legyen egy konstruktora két paraméterrel
 public Pont(double x, double y)
 {
     this.x = x;
     this.y = y;
 }
-
+<br>
 
 // Gombok létrehozása
 private Button[,] jatektabla = new Button[10, 10];   // jatektabla
@@ -141,9 +141,9 @@ for (int sor = 0; sor < 10; sor++)
         this.Controls.Add(jatektabla[sor, oszlop]);
     }
 }
-
+<br>
 //VAGY
-
+<br>
 Button[] gombok = new Button[25];
 
 int k = 1;
@@ -159,35 +159,35 @@ for (int i = 0; i < 25; i++)
 	gombok[i].Click += new EventHandler(Kattintas);
 }
 
-
+<br>
 //Ez a kód hívódik meg a gomb megnyomásánál
 private void Kattintas(object sender, EventArgs e)
 {
     //kód
 }
-
+<br>
 // Itt a "Button" mint objektum létezik, így a sender átalakítja hogy lehessen
 // használni a kódban mint "button"
 Button button = (Button)sender;
 button.Enabled = false;
-
+<br>
 // Egy felülírt ToString() metódus
 public override string ToString()
 {
     return GetType().Name[0] + " " + nev; 
 }
-
+<br>
 // Meghívják az ősosztály konstruktorát
 public Macska(string nev) : base(nev)
 {
 }
-
+<br>
 // Metódus
 public string Nyavog()
 {
     return nev + " nyavog... miau...";
 }
-
+<br>
 // a Macska osztály tartalmazzon egy Nyavog() metódust, amely a következő
 // karakterláncot adja vissza: MacskaNeve + ” nyávog... miau ...” 
 public string Nyavog()
