@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+/* Teljes oldal középre igazítása */
+body, html {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f6f9; /* Háttérszín */
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Szekció középre igazítása és elrendezés */
+.about-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 100px 0;
+}
+
+/* Profil szöveg formázása */
+.profile-text {
+    max-width: 800px;
+    text-align: center;
+    margin: 40px;
+}
+
+.profile-text h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333; /* Sötét szövegszín */
+    text-transform: uppercase; /* Szöveg nagybetűssé alakítása */
+}
+
+.profile-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555; /* Szürke szövegszín */
+    margin-bottom: 30px;
+    letter-spacing: 0.5px; /* Betűköz növelése */
+}
+
+/* Közösségi média szöveg formázása */
+.profile-text p:last-child {
+    font-style: italic;
+    color: #777; /* Világos szürke szövegszín */
+    margin-top: 30px;
+}
+
+/* Profil kép formázása */
+.profile-image {
+    margin: 40px;
+}
+
+.profile-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 50%;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Enyhe árnyék */
+    transition: transform 0.3s ease-in-out; /* Sima animáció a képre */
+}
+
+.profile-image img:hover {
+    transform: scale(1.05); /* Kép nagyobbá változik hoverkor */
+}
+
+
+    </style>
+</head>
+<body>
+
+    <section class="about-section">
+        <div class="profile-image">
+            <img src="pictures/Lilla.jpg" alt="My Profile">
+        </div>
+        <div class="profile-text">
+            <h2>Üdvözlöm!</h2>
+            <p>
+                Sziasztok! Én vagyok [Név], egy szenvedélyes [Szakma/Hobbik] kedvelő. Imádok [Szakma/Hobbik] között eltölteni az időt, és mindig nyitott vagyok az új kihívásokra és lehetőségekre.
+            </p>
+            <p>
+                Ezen az oldalon megosztom veletek a tapasztalataimat, ötleteimet és projekteimet. Remélem, hogy inspirációra leltek majd itt, és örömmel veszem, ha megosztjátok velem a véleményeiteket is.
+            </p>
+            <p>
+                Kövessetek engem a közösségi médiában is:
+            </p>
+
+        </div>
+    </section>
+</body>
+</html>

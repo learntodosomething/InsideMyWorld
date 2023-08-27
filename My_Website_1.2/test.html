@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insider</title>
+
+  <link rel="stylesheet" type="text/css" href="Data/div.css">
+  <link rel="stylesheet" type="text/css" href="Data/footer.css">
+  <link rel="stylesheet" type="text/css" href="Data/full.css">
+  <link rel="stylesheet" type="text/css" href="Data/mobile.css">
+  <link rel="stylesheet" type="text/css" href="Data/card.css">
+  <script src="Data/script.js" defer></script>
+  <script>
+    // görgető nyil
+    function scrollDown() {
+      const scrollStep = 4; // A lépésköz, amivel lefelé görgetünk
+      const scrollInterval = 2; // Az időzítési intervallum (ms)
+      const maxScrollTime = 3000; // Maximális görgetési idő (ms)
+
+      let elapsedTime = 0;
+      let isScrolling = true;
+
+      function scrollToBottom() {
+        if (
+          window.scrollY < document.documentElement.scrollHeight - window.innerHeight &&
+          elapsedTime < maxScrollTime &&
+          isScrolling
+        ) {
+          window.scrollBy(0, scrollStep);
+          elapsedTime += scrollInterval;
+          setTimeout(scrollToBottom, scrollInterval);
+        }
+      }
+
+      scrollToBottom();
+
+      setTimeout(() => {
+        isScrolling = false; // Leállítjuk a görgetést
+      }, maxScrollTime);
+    }
+
+    scrollDown();
+  </script>
+
+</head>
+<body>
+
+  <header>
+  <a href="/">
+      <div style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden;">
+          <img src="pictures/pic.png" alt="Picture" class="img" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+  </a>
+  
+  <nav>
+      <a class="" href=""><span>🇭🇺</span></a>
+      <span style="margin-left: 15px; user-select: none; color: white;">/</span>
+      <a class="" href=""><span>🇺🇸</span></a>
+      <a class="" href=""><span>Home</span></a>
+      <a class="" href="https://codepen.io/Lagy_o" target="_blank"><span>CodePen</span></a>
+      <a class="" href="https://www.facebook.com/profile.php?id=100086555917435" target="_blank"><span>Facebook</span></a>
+      <a class="" href="https://www.instagram.com/lagy_o/" target="_blank"><span>Instagram</span></a>
+      <a class="" href="file:///C:\Users\ozoga\OneDrive\Počítač\My_Website_1.2\About_me.html"><span>About Me</span></a>
+  </nav>
+  <button id="phone-toggle" class="burger burger2" aria-label="Burger 2 Menu"><span></span></button>
+  </header>
+
+  <div id="phone-dropdown" class="dropdown">
+    <a class="" href=""><span>🇭🇺</span></a>
+    <a class="" href=""><span>🇺🇸</span></a>
+    <a class="" href=""><span>Home</span></a>
+    <a class="" href="https://codepen.io/Lagy_o" target="_blank"><span>CodePen</span></a>
+    <a class="" href="https://www.facebook.com/profile.php?id=100086555917435" target="_blank"><span>Facebook</span></a>
+    <a class="" href="https://www.instagram.com/lagy_o/" target="_blank"><span>Instagram</span></a>
+    <a class="" href="file:///C:\Users\ozoga\OneDrive\Počítač\My_Website_1.2\About_me.html"><span>About Me</span></a>
+  </div>
+
+  <div class="main-content">
+    <div class="slide">
+      <div class="video-container">
+        <video autoplay loop muted playsinline controls style="pointer-events: none;">
+          <source src="video/videobg0.mp4" type="video/mp4">
+        </video>
+      </div>
+      
+      <!-- Üdvözlő szöveg -->
+      <div id="welcome-text">
+        <div id="Main">
+            Welcome here
+        </div>
+        <div id="Second">
+          <div class="text"></div>                        
+        </div>              
+      </div>
+      
+      <div class="arrow" onclick="scrollDown()">
+        <svg width="40" height="40" viewBox="0 0 40 40">
+          <path d="M20 40 L40 0 L20 5 L0 0 Z" fill="#000239"/>
+        </svg>
+      </div>
+    </div>
+    
+    <section class="about-section" style="margin-bottom: -20px;">
+      <div class="profile-text">
+          <div class="animate-box">
+              <p class="custom-p">
+                I'm Laci, a university student who loves programming!<br style=" margin-bottom: 10px;">
+                Scroll down so you can see all the projects I made so far!<br style=" margin-bottom: 10px;">
+                Feel free to explore the page!
+              </p>
+          </div>
+      </div>
+    </section>
+
+    <div class="animate-box">
+      <div id="imp-style">
+        <div class="my-work-container">
+            <h1 class="My-work">
+                <span style="user-select: none; font-family: Gruppo;">┕━━☽【 Programming projects 】☾━━┙</span>
+            </h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="animate-box">
+      <div id="card-container">
+        <!-- URL -->
+        <a href="file:///C:/Users/ozoga/OneDrive/Po%C4%8D%C3%ADta%C4%8D/HackerMan/visual%20studio%20code/Elk%C3%A9peszt%C5%91%20Javascript/Korok-hatter.html" id="fadeLink">
+            <div class="card">
+            <div class="wrapper">
+                <!-- Begin BG -->
+                <img src="pictures/1_card-main1.png" class="cover-image" />
+            </div>
+            <!-- Text -->
+            <img src="pictures/1_card-text1.png" class="title" />
+            <!-- PopUp image -->
+            <img src="pictures/1_card-hover1.png" class="character" />
+            </div>
+        </a>
+
+        <!-- URL -->
+        <a href="file:///C:/Users/ozoga/OneDrive/Po%C4%8D%C3%ADta%C4%8D/HackerMan/visual%20studio%20code/Elk%C3%A9peszt%C5%91%20Javascript/Korok-hatter.html" id="fadeLink">
+            <div class="card">
+            <div class="wrapper">
+                <!-- Begin BG -->
+                <img src="pictures/1_card-main2.png" class="cover-image" />
+            </div>
+            <!-- Text -->
+            <img src="pictures/1_card-text2.png" class="title" />
+            <!-- PopUp image -->
+            <img src="pictures/card-hover2.png" class="character" />
+            </div>
+        </a>
+
+        <!-- URL -->
+        <a href="file:///C:/Users/ozoga/OneDrive/Po%C4%8D%C3%ADta%C4%8D/HackerMan/visual%20studio%20code/Elk%C3%A9peszt%C5%91%20Javascript/Korok-hatter.html" id="">
+            <div class="card">
+            <div class="wrapper">
+                <!-- Begin BG -->
+                <img src="pictures/computer.png" class="cover-image" />
+            </div>
+            <!-- Text -->
+            <img src="pictures/1_card-text3.png" class="title" />
+            <!-- PopUp image -->
+            <img src="pictures/fire.png" class="character" />
+            </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="animate-box">
+      <div id="imp-style">
+        <div class="my-work-container">
+            <h1 class="My-work">
+                <span style="user-select: none; font-family: Gruppo;">┕━━☽【 AI art 】☾━━┙</span>
+            </h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="animate-box">
+      <div id="card-container">
+        <!-- URL -->
+        <a href="file:///C:/Users/ozoga/OneDrive/Po%C4%8D%C3%ADta%C4%8D/HackerMan/visual%20studio%20code/Elk%C3%A9peszt%C5%91%20Javascript/Korok-hatter.html" id="fadeLink">
+            <div class="card">
+            <div class="wrapper">
+                <!-- Begin BG -->
+                <img src="pictures/2_card-main1.png" class="cover-image" />
+            </div>
+            <!-- Text -->
+            <img src="pictures/2_card-text1.png" class="title" />
+            <!-- PopUp image -->
+            <img src="pictures/2_card-hover1.png" class="character" />
+            </div>
+        </a>
+
+        <!-- URL -->
+        <a href="file:///C:/Users/ozoga/OneDrive/Po%C4%8D%C3%ADta%C4%8D/HackerMan/visual%20studio%20code/Elk%C3%A9peszt%C5%91%20Javascript/Korok-hatter.html" id="fadeLink">
+            <div class="card">
+            <div class="wrapper">
+                <!-- Begin BG -->
+                <img src="pictures/2_card-main2.png" class="cover-image" />
+            </div>
+            <!-- Text -->
+            <img src="pictures/2_card-text2.png" class="title" />
+            <!-- PopUp image -->
+            <img src="pictures/2_card-hover2.png" class="character" />
+            </div>
+        </a>
+
+        <!-- URL -->
+        <a href="file:///C:/Users/ozoga/OneDrive/Po%C4%8D%C3%ADta%C4%8D/HackerMan/visual%20studio%20code/Elk%C3%A9peszt%C5%91%20Javascript/Korok-hatter.html" id="">
+            <div class="card">
+            <div class="wrapper">
+                <!-- Begin BG -->
+                <img src="pictures/2_card-main3.png" class="cover-image" />
+            </div>
+            <!-- Text -->
+            <img src="pictures/2_card-text3.png" class="title" />
+            <!-- PopUp image -->
+            <img src="pictures/2_card-hover3.png" class="character" />
+            </div>
+        </a>
+      </div>
+    </div>
+
+    <section class="about-section" style="margin-bottom: -20px;">
+      <div class="profile-text">
+          <div class="animate-box">
+              <p class="custom-p">
+                You seem to have reached the end of the page, but don't worry! <br style=" margin-bottom: 10px;">
+                If you interested in more, check out the
+                <a href="file:///C:\Users\ozoga\OneDrive\Počítač\My_Website_1.2\About_me.html">
+                  About me
+                  <svg viewBox="-20 -5 105 40" style="width: 180%; height: 230%">
+                    <path d="M6.9739 30.8153H63.0244C65.5269 30.8152 95.5358 -3.68471 35.4998 8.81531C-16.1598 11.2025 -10.894099 31.9766 26.9922 34.3153C104.062 35.3153 54.5169 -6.68469 23.489 9.31527" />
+                  </svg>               
+                </a>
+                tab! <br style=" margin-bottom: 10px;">
+                There are new work coming in the future!<br style=" margin-bottom: 80px;">
+              </p>
+          </div>
+      </div>
+    </section>
+
+  </div>
+
+
+  <!-- Footer -->
+  <div class="footer">
+    <!-- Buborékok -->
+    <div class="bubbles">        
+    </div>
+
+    <!-- Footer Content -->
+    <div class="footer-content">
+        <!-- Footer -->
+        <div class="footer-logo">
+            <p>Szöveg</p>
+        </div>
+        <!-- Footer -->
+        <div class="footer-links">
+            <h3>Szöveg</h3>
+            <ul>
+                <li><a href="#">Szöveg</a></li>
+                <li><a href="#">Szöveg</a></li>
+                <li><a href="#">Szöveg</a></li>
+                <li><a href="#">Szöveg</a></li>
+            </ul>
+        </div>
+        <!-- Special Thanks -->
+        <div class="footer-links">
+          <h3>Special thanks</h3>
+          <ul>
+              <li>
+                <a href="https://www.instagram.com/pikkaofficial" target="_blank" style="display: flex; align-items: center; text-decoration: none;">
+                  <img src="pictures/Lilla.jpg" style="max-width: 15%; height: auto; border-radius: 10px; margin-right: 10px;">
+                  <p style="margin: 0;">Benkó Lilla</p>
+              </a>
+              
+              </li>
+          </ul>
+        </div>
+    </div>
+  </div>
+
+
+  <svg style="position:fixed; top:100vh">
+  <defs>
+  <filter id="blob">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"></feGaussianBlur>
+      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="blob"></feColorMatrix>
+  </filter>
+  </defs>
+  </svg>
+
+
+
+
+</body>
+</html>
