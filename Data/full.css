@@ -1,0 +1,305 @@
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+  
+  .slide {
+    position: relative;
+    padding: 0%;
+    min-height: 100vh;
+    box-sizing: border-box;
+    transform-style: inherit;
+  }
+  
+  .slide:before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+
+  header {
+    position: absolute; /* Módosítjuk fixed-ről absolute-ra */
+    top: 10px;
+    left: 0;
+    width: 98%;
+    background-color: rgba(0, 0, 0, 0);
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    z-index: 10002; /* Nagyobb rétegzési szint, mint a tartalomé */
+    overflow: hidden; /* Elkerüljük a felesleges görgetést a header tartalmánál */
+}
+
+a {
+  font-family: "Britannic Bold", sans-serif;
+}
+
+header img {
+    height: 100px; /* A kép magasságát itt tudod állítani */
+    margin-right: 10px;
+}
+
+header nav {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    font-size: 1.9em;
+}
+
+header a {
+    color: white; /* Szöveg színe a navigációs menüben */
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+/* Menő neon lila szín a kurzor felett */
+header a {
+    position: relative;
+    color: rgb(255, 255, 255); /* Alapértelmezett szín */
+    transition: color 0.3s; /* Szín átmeneti animáció */
+    text-decoration: none; /* Alapértelmezett aláhúzás kikapcsolása */
+}
+
+/* Kurzor fölé helyezés esetén */
+header a:hover {
+    color: rgb(227, 54, 236); /* Neon lila szín */
+}
+
+/* Hozzáadott: a kulcsfontosságú animáció létrehozása */
+@keyframes underlineAnimation {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Hozzáadott: az animáció alkalmazása a navigációs linkekre */
+header nav a::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: rgb(227, 54, 236); /* Neon lila szín */
+    transition: width 0.3s; /* Szélesség átmeneti animáció */
+}
+
+/* Kurzor fölé helyezés esetén az animáció bekapcsolása */
+header nav a:hover::after {
+    animation: underlineAnimation 0.3s forwards; /* Animáció hozzáadása a kurzor alatti vonalhoz */
+}
+
+/* Hozzáadott: kép alatti vonal kikapcsolása */
+header a img {
+    text-decoration: none; /* Az aláhúzást kikapcsoljuk a kép alatt */
+}
+
+/* Scrollbar */
+:not(:hover):not(:focus) {
+  scrollbar-color: transparent transparent !important;
+}
+* {
+  scrollbar-width: thin !important;
+  scrollbar-color: rgb(224, 0, 209) #222324ff !important;
+  scrollbar-base-color: #222;
+  transition: ease 0.3s scrollbar-color;
+}
+  
+
+
+.my-work-container {
+  background-color: var(--color-background);
+  display: grid;
+  font-family: Poppins, sans-serif;
+  border-radius: 10px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+}
+.My-work {
+  font-size: 28px;
+  margin: 0;
+  padding: 10px;
+  background-clip: text;
+  background-image: linear-gradient(to right, #09f1b8, #00a2ff, #ff00d2, #fed90f);
+  color: var(--color-background);
+  font-weight: var(--font-weight);
+  letter-spacing: var(--letter-spacing);
+  padding: calc(--stroke-width / 2);
+  -webkit-text-stroke-color: transparent;
+  -webkit-text-stroke-width: var(--stroke-width);
+  transition: font-size 0.5s ease; /* Animáció hozzáadása */
+}
+
+@media (max-width: 1000px) {
+  .My-work{
+    font-size: 16px;
+  }
+}
+
+#imp-style {
+  text-align: center;
+  padding: 20px;
+  height: 170px;
+  z-index: 1;
+}
+
+
+/* Üdvözlő szöveg */
+#welcome-text {
+  position: absolute;
+  color: white;
+  font-family: 'Impact', fantasy;  
+  text-align: left;
+  z-index: 10002;  
+}
+#Main {
+  font-size: 100px;
+  font-weight: 900;
+  transition: font-size 0.3s ease;
+}
+#Second {
+  font-size: 50px;
+  transition: font-size 0.3s ease;
+}
+
+
+/* Animated */
+.text-container {
+  overflow: hidden;
+}
+.animate-text, .animate-box {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s, transform 1s;
+}
+.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+.animated-text {
+  font-size: 24px;
+}
+
+/* Nyil */
+
+.arrow {
+  cursor: pointer;
+  position: absolute;
+  bottom: 20px; /* Változtasd a megfelelő pozícióra */
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 3s infinite;
+  z-index: 10;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(10px);
+  }
+}
+
+
+/* Welcome text2 */
+.about-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 0 50px; 
+  position: relative; 
+}
+
+
+.about-section::before {
+  content: "";
+  position: absolute;
+  top: -50px; 
+  left: 0;
+  right: 0;
+  height: calc(100% + 50px); 
+  background-color: #222;
+  background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat-back.svg');
+  background-position: center;
+  background-repeat: repeat;
+  background-size: 3%;
+  border-radius: 65px; 
+  z-index: 1; 
+}
+
+.profile-text {
+  max-width: 1200px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.profile-text h2 {
+  font-size: 40px;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: "Britannic Bold", sans-serif;
+  margin-top: 20px;
+}
+
+@media (max-width: 1000px) {
+  .profile-text h2 {
+    font-size: 16px;
+  }
+}
+
+.custom-p {
+  font-size: 32px;
+  margin: 0;
+  font-family: "Britannic Bold", sans-serif;
+}
+
+.custom-p a {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  margin: 0 var(--spacing, 0px);
+  transition: margin 0.25s;
+}
+
+.custom-p a svg {
+  width: 76px;
+  height: 40px;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 7px) translateZ(0);
+  fill: none;
+  stroke: var(--stroke, var(--line));
+  stroke-linecap: round;
+  stroke-width: 2px;
+  stroke-dasharray: var(--offset, 69px) 278px;
+  stroke-dashoffset: 361px;
+  transition: stroke 0.25s ease var(--stroke-delay, 0s), stroke-dasharray 0.35s;
+}
+
+.custom-p a:hover {
+  --spacing: 4px;
+  --stroke: var(--line-active);
+  --stroke-delay: 0.1s;
+  --offset: 180px;
+}
+
+
