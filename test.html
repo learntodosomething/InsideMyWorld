@@ -46,6 +46,20 @@
 </head>
 <body>
 
+  <div id="preloader">
+    <div class="loading">
+      <div class="loading-text">
+        <span class="loading-text-words">L</span>
+        <span class="loading-text-words">O</span>
+        <span class="loading-text-words">A</span>
+        <span class="loading-text-words">D</span>
+        <span class="loading-text-words">I</span>
+        <span class="loading-text-words">N</span>
+        <span class="loading-text-words">G</span>
+      </div>
+    </div>
+  </div>
+
   <header>
   <a href="/">
       <div style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden;">
@@ -296,7 +310,12 @@
   </svg>
 
 
-
+  <script>
+    var loader = document.getElementById("preloader");
+    window.addEventListener("load", function(){
+      loader.style.display = "none";
+    })
+  </script>
 
 </body>
 </html>
