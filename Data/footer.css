@@ -1,19 +1,10 @@
 .footer {
     z-index: 1;
-    --footer-background: rgb(60, 0, 66);
+    --footer-background:rgb(60, 0, 66);
     display: grid;
-    position: fixed;
+    position: relative;
     grid-area: footer;
     min-height: 50px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: var(--footer-background);
-    align-items: flex-end;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    padding: 20px 0; /* Opcionális: Padding hozzáadása a jobb megjelenéshez */
 }
 
 
