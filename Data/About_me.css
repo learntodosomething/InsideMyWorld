@@ -1,0 +1,32 @@
+.About_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 110vh;
+    background-color: rgb(75, 126, 170, 0.2);
+}
+
+.About_container2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120vh;
+    background-color: rgba(16, 119, 28, 0.2);
+}
+
+.About_container2{
+    display: flex;
+}
+
+
+.About_pic {
+    flex: 1;
+    background-color: rgb(255, 192, 203, 0.3);
+    height: 100vh;
+}
+
+.About_content {
+    flex: 1;
+    background-color: rgb(135, 206, 235, 0.3);
+    height: 100vh;
+}
