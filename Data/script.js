@@ -142,7 +142,7 @@ function createBubble() {
   bubble.classList.add("bubble");
   bubble.style = `
     --size: ${Math.random() * 4 + 2}rem;
-    --position: ${Math.random() * 100}%;
+    --position: ${Math.random() * 95}%;
     --time: ${Math.random() * 2 + 2}s;
     --delay: ${-Math.random() * 3}s;
     --distance: ${Math.random() * 6 + 6}rem;
