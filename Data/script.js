@@ -133,47 +133,7 @@ class TextScramble {
 /* Welcome text change */
 
 
-
-const maxBubbles = 30; // Maximális buborék mennyiség
-
-function createBubble() {
-  const bubble = document.createElement("div");
-  bubble.classList.add("bubble");
-
-  const windowWidth = window.innerWidth;
-  const isWindowNarrow = windowWidth < 1000;
-  const size = isWindowNarrow ? `${Math.random() * 2 + 1}rem` : `${Math.random() * 4 + 2}rem`;
-  const position = isWindowNarrow ? `${Math.random() * 30}%` : `${Math.random() * 100}%`;
-
-  bubble.style = `
-    --size: ${size};
-    --position: ${position};
-    --time: ${Math.random() * 2 + 2}s;
-    --delay: ${-Math.random() * 3}s;
-    --distance: ${Math.random() * 6 + 6}rem;
-    left: var(--position);
-    width: var(--size);
-    height: var(--size);
-    animation: bubble-size var(--time) ease-in infinite var(--delay), bubble-move var(--time) ease-in infinite var(--delay);
-    transform: translate(-50%, 100%);
-  `;
-
-  document.querySelector(".bubbles").appendChild(bubble);
-}
-
-function generateBubbles() {
-  const existingBubbles = document.querySelectorAll(".bubble").length;
-
-  if (existingBubbles < maxBubbles) {
-    for (let i = 0; i < 3; i++) {
-      if (existingBubbles + i < maxBubbles) {
-        createBubble();
-      }
-    }
-  }
-}
-
-setInterval(generateBubbles, 1000);
+//Footer
 
 
 
