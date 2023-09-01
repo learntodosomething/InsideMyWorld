@@ -135,40 +135,7 @@ next()
 
 
 // Footer
-const maxBubbles = 30; // Maximális buborék mennyiség
 
-function createBubble() {
-const bubble = document.createElement("div");
-bubble.classList.add("bubble");
-bubble.style = `
-  --size: ${Math.random() * 4 + 2}rem;
-  --position: ${Math.random() * 100}%;
-  --time: ${Math.random() * 2 + 2}s;
-  --delay: ${-Math.random() * 3}s;
-  --distance: ${Math.random() * 6 + 6}rem;
-  left: var(--position);
-  width: var(--size);
-  height: var(--size);
-  animation: bubble-size var(--time) ease-in infinite var(--delay), bubble-move var(--time) ease-in infinite var(--delay);
-  transform: translate(-50%, 100%);
-`;
-
-document.querySelector(".bubbles").appendChild(bubble);
-}
-
-function generateBubbles() {
-const existingBubbles = document.querySelectorAll(".bubble").length;
-
-if (existingBubbles < maxBubbles) {
-  for (let i = 0; i < 3; i++) {
-    if (existingBubbles + i < maxBubbles) {
-      createBubble();
-    }
-  }
-}
-}
-
-setInterval(generateBubbles, 1000);
 
 
 //Animáció
