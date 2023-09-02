@@ -138,37 +138,59 @@ next()
 // Footer
 const maxBubbles = 30; // Maximális buborék mennyiség
 function createBubble() {
-const bubble = document.createElement("div");
-bubble.classList.add("bubble");
-bubble.style = `
-  --size: ${Math.random() * 4 + 2}rem;
-  --position: ${Math.random() * 90}%;
-  --time: ${Math.random() * 2 + 2}s;
-  --delay: ${-Math.random() * 3}s;
-  --distance: ${Math.random() * 6 + 6}rem;
-  left: var(--position);
-  width: var(--size);
-  height: var(--size);
-  animation: bubble-size var(--time) ease-in infinite var(--delay), bubble-move var(--time) ease-in infinite var(--delay);
-  transform: translate(-50%, 100%);
-`;
-
-document.querySelector(".bubbles").appendChild(bubble);
+  const bubble = document.createElement("div");
+  bubble.classList.add("bubble");
+  const windowWidth = window.innerWidth;
+  const size = windowWidth <= 1000 ? Math.random() * 2 + 1 : Math.random() * 4 + 2;
+  const position = windowWidth <= 1000 ? "80%" : `${Math.random() * 90}%`;
+  const time = Math.random() * 2 + 2;
+  const delay = -Math.random() * 3;
+  const distance = Math.random() * 6 + 6;
+  
+  bubble.style = `
+    --size: ${size}rem;
+    --position: ${position};
+    --time: ${time}s;
+    --delay: ${delay}s;
+    --distance: ${distance}rem;
+    left: var(--position);
+    width: var(--size);
+    height: var(--size);
+    animation: bubble-size var(--time) ease-in infinite var(--delay), bubble-move var(--time) ease-in infinite var(--delay);
+    transform: translate(-50%, 100%);
+  `;
+  
+  document.querySelector(".bubbles").appendChild(bubble);
 }
 
 function generateBubbles() {
-const existingBubbles = document.querySelectorAll(".bubble").length;
-
-if (existingBubbles < maxBubbles) {
-  for (let i = 0; i < 3; i++) {
-    if (existingBubbles + i < maxBubbles) {
-      createBubble();
+  const existingBubbles = document.querySelectorAll(".bubble").length;
+  
+  if (existingBubbles < maxBubbles) {
+    for (let i = 0; i < 3; i++) {
+      if (existingBubbles + i < maxBubbles) {
+        createBubble();
+      }
     }
   }
 }
+
+// Position változó a position érték tárolásához
+let position = "80%";
+
+function updatePosition() {
+  const windowWidth = window.innerWidth;
+  position = windowWidth <= 1000 ? "80%" : `${Math.random() * 90}%`;
 }
 
+// Első alkalommal beállítjuk a position értékét
+updatePosition();
+
+// Figyeljük az ablak szélességének változását
+window.addEventListener("resize", updatePosition);
+
 setInterval(generateBubbles, 1000);
+
 
 
 
