@@ -161,7 +161,7 @@ header a img {
 
 @media (max-width: 1000px) {
   .My-work{
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 
@@ -285,7 +285,7 @@ header a img {
   font-family: my_Britanic;
 }
 
-.custom-p a {
+.custom-p {
   display: inline-block;
   position: relative;
   text-decoration: none;
@@ -294,29 +294,56 @@ header a img {
   transition: margin 0.25s;
 }
 
-.custom-p a svg {
-  width: 76px;
-  height: 40px;
+.cool-link {
+  text-decoration: none;
+  position: relative;
+  color: rgb(147, 0, 144);
+  overflow: hidden;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.cool-link::before {
+  content: "";
   position: absolute;
-  left: 50%;
-  bottom: 0;
-  transform: translate(-50%, 7px) translateZ(0);
-  fill: none;
-  stroke: var(--stroke, var(--line));
-  stroke-linecap: round;
-  stroke-width: 2px;
-  stroke-dasharray: var(--offset, 69px) 278px;
-  stroke-dashoffset: 361px;
-  transition: stroke 0.25s ease var(--stroke-delay, 0s), stroke-dasharray 0.35s;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: rgb(168, 0, 184);
+  transform: scaleX(0);
+  transform-origin: 0 0;
+  transition: transform 0.3s ease;
+  z-index: -1;
 }
 
-.custom-p a:hover {
-  --spacing: 4px;
-  --stroke: var(--line-active);
-  --stroke-delay: 0.1s;
-  --offset: 180px;
+.cool-link:hover {
+  color: rgb(168, 0, 184);
+  transform: translateY(-5px);
 }
 
+.cool-link:hover::before {
+  transform: scaleX(1);
+}
+
+
+
+
+.loading-text {
+  opacity: 0; /* Kezdetben láthatatlan */
+  animation: fadeIn 4s infinite; /* 2 másodperces fadeIn animáció, ismétlődik végtelen alkalommal */
+}
+
+@keyframes fadeIn {
+  10% {
+    opacity: 0; /* 0% -nál kezdetben láthatatlan */
+  }
+  90% {
+    opacity: 1; /* 50% -nál megjelenik */
+  }
+  100% {
+    opacity: 0; /* 100% -nál újra láthatatlan */
+  }
+}
 
 
 

@@ -193,4 +193,15 @@
         button.burger.burger2.on span:before {
             transform: rotate(-90deg);
         }
+
+
+        @media only screen and (max-width: 900px) {
+            .blobber {
+              display: none;
+            }
+            .welcome-text{
+                left: 150;
+                bottom: 100;
+            }
+          }
         

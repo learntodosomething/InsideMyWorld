@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>Insider</title>
+  
 
   <link rel="stylesheet" type="text/css" href="Data/div.css">
   <link rel="stylesheet" type="text/css" href="Data/footer.css">
@@ -43,18 +45,13 @@
     scrollDown();
   </script>
 </head>
-<body>
 
+
+<body>
   <div id="preloader">
     <div class="loading">
-      <div class="loading-text">
-        <span class="loading-text-words">L</span>
-        <span class="loading-text-words">O</span>
-        <span class="loading-text-words">A</span>
-        <span class="loading-text-words">D</span>
-        <span class="loading-text-words">I</span>
-        <span class="loading-text-words">N</span>
-        <span class="loading-text-words">G</span>
+      <div class="loading-text" style="font-family: my_Britanic; font-size: 36px;">
+        <span >LOADING</span>
       </div>
     </div>
   </div>
@@ -69,20 +66,20 @@
   <nav>
       <a class="" href="Home.html"><span>🇭🇺</span></a>
       <span style="margin-left: 15px; user-select: none; color: white;">/</span>
-      <a class="" href="Home.html"><span>🇺🇸</span></a>
-      <a class="" href="Home.html"><span>Home</span></a>
+      <a class="" href=""><span>🇺🇸</span></a>
+      <a class="" href=""><span>Home</span></a>
       <a class="" href="https://codepen.io/Lagy_o" target="_blank"><span>CodePen</span></a>
       <a class="" href="https://www.facebook.com/profile.php?id=100086555917435" target="_blank"><span>Facebook</span></a>
       <a class="" href="https://www.instagram.com/lagy_o/" target="_blank"><span>Instagram</span></a>
-      <a class="" href="About_me.html"><span>About Me</span></a>
+      <a href="About_me.html"><span>About Me</span></a>
   </nav>
   <button id="phone-toggle" class="burger burger2" aria-label="Burger 2 Menu"><span></span></button>
   </header>
 
   <div id="phone-dropdown" class="dropdown">
-    <a class="" href="Home.html"><span>🇭🇺</span></a>
-    <a class="" href="Home.html"><span>🇺🇸</span></a>
-    <a class="" href="Home.html"><span>Home</span></a>
+    <a class="" href=""><span>🇭🇺</span></a>
+    <a class="" href=""><span>🇺🇸</span></a>
+    <a class="" href=""><span>Home</span></a>
     <a class="" href="https://codepen.io/Lagy_o" target="_blank"><span>CodePen</span></a>
     <a class="" href="https://www.facebook.com/profile.php?id=100086555917435" target="_blank"><span>Facebook</span></a>
     <a class="" href="https://www.instagram.com/lagy_o/" target="_blank"><span>Instagram</span></a>
@@ -93,9 +90,9 @@
     <div class="slide">
       <div class="video-container">
         <video autoplay loop muted playsinline controls style="pointer-events: none;">
-          <source src="gb_video/videobg0(1).mp4" type="video/mp4">
+          <source src="gb_video/Lilla_bg.mp4" type="video/mp4">
           
-        </video>
+        </video>        
       </div>
       
       <!-- Üdvözlő szöveg -->
@@ -131,7 +128,7 @@
       <div id="imp-style">
         <div class="my-work-container">
             <h1 class="My-work">
-                <span style="user-select: none; font-family: Gruppo;">┕━━☽【 Programming projects 】☾━━┙</span>
+                <span style="user-select: none;">┕━━☽【 Programming projects 】☾━━┙</span>
             </h1>
         </div>
       </div>
@@ -140,30 +137,32 @@
     <div class="animate-box">
       <div id="card-container">
         <!-- URL -->
-        <a href="Programs.html" id="fadeLink">
-            <div class="card">
-            <div class="wrapper">
-                <!-- Begin BG -->
-                <img src="pictures/1_card-main1.png" class="cover-image" />
-            </div>
-            <!-- Text -->
-            <img src="pictures/1_card-text1.png" class="title" />
-            <!-- PopUp image -->
-            <img src="pictures/1_card-hover1.png" class="character" />
-            </div>
-        </a>
+        <a href="Programs.html" >
+
+          <div class="card">
+              <div class="wrapper">
+                  <!-- Begin BG -->
+                  <img src="pictures/1_card-main1.png" class="cover-image" />
+              </div>
+              <!-- Text -->
+              <img src="pictures/1_card-text1.png" class="title" />
+              <!-- PopUp image -->
+              <img src="pictures/1_card-hover1.png" class="character" />
+          </div>
+      </a>
+      
 
         <!-- URL -->
         <a href="Games.html" id="fadeLink">
             <div class="card">
             <div class="wrapper">
                 <!-- Begin BG -->
-                <img src="pictures/1_card-main2.png" class="cover-image" />
+                <img src="pictures/1_card-main2.jpg" class="cover-image" />
             </div>
             <!-- Text -->
             <img src="pictures/1_card-text2.png" class="title" />
             <!-- PopUp image -->
-            <img src="pictures/card-hover2.png" class="character" />
+            <img src="pictures/1_card-hover2.png" class="character" />
             </div>
         </a>
 
@@ -187,7 +186,7 @@
       <div id="imp-style">
         <div class="my-work-container">
             <h1 class="My-work">
-                <span style="user-select: none; font-family: Gruppo;">┕━━☽【 AI art 】☾━━┙</span>
+                <span style="user-select: none;">┕━━☽【 AI art 】☾━━┙</span>
             </h1>
         </div>
       </div>
@@ -245,12 +244,9 @@
               <p class="custom-p">
                 You seem to have reached the end of the page, but don't worry! <br style=" margin-bottom: 10px;">
                 If you interested in more, check out the
-                <a href="About_me.html">
-                  About me
-                  <svg viewBox="-20 -5 105 40" style="width: 180%; height: 230%">
-                    <path d="M6.9739 30.8153H63.0244C65.5269 30.8152 95.5358 -3.68471 35.4998 8.81531C-16.1598 11.2025 -10.894099 31.9766 26.9922 34.3153C104.062 35.3153 54.5169 -6.68469 23.489 9.31527" />
-                  </svg>               
-                </a>
+                
+                <a href="About_me.html" class="cool-link">About Me</a>
+
                 tab! <br style=" margin-bottom: 10px;">
                 There are new work coming in the future!<br style=" margin-bottom: 80px;">
               </p>
@@ -264,9 +260,10 @@
   <!-- Footer -->
   <div class="footer">
     <!-- Buborékok -->
-    <div class="bubbles">        
+    <div class="blobber">
+      <div class="bubbles">        
+      </div>
     </div>
-
     <!-- Footer Content -->
     <div class="footer-content">
         <!-- Footer -->
@@ -299,24 +296,28 @@
     </div>
   </div>
 
-
-  <svg style="position:fixed; top:100vh">
-  <defs>
-  <filter id="blob">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"></feGaussianBlur>
-      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="blob"></feColorMatrix>
-  </filter>
-  </defs>
-  </svg>
-
-<script>
-  var loader = document.getElementById("preloader");
-  window.addEventListener("load", function(){
-    loader.style.display = "none";
-  })
-</script>
+  <div class="blobber">
+    <svg style="position:fixed; top:100vh">
+    <defs>
+    <filter id="blob">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"></feGaussianBlur>
+        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="blob"></feColorMatrix>
+    </filter>
+    </defs>
+    </svg>
+  </div>
 
 
-  
+
+
+
+  <script>
+    var loader = document.getElementById("preloader");
+    window.addEventListener("load", function(){
+      loader.style.display = "none";
+    })
+  </script>
+
+
 </body>
 </html>
