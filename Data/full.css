@@ -144,12 +144,14 @@ header a img {
   border-radius: 10px;
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
 }
+
 .My-work {
   font-size: 28px;
   margin: 0;
   padding: 10px;
   background-clip: text;
   background-image: linear-gradient(to right, #09f1b8, #00a2ff, #ff00d2, #fed90f);
+  -webkit-background-clip: text;
   color: var(--color-background);
   font-weight: var(--font-weight);
   letter-spacing: var(--letter-spacing);
@@ -158,6 +160,9 @@ header a img {
   -webkit-text-stroke-width: var(--stroke-width);
   transition: font-size 0.5s ease; /* Animáció hozzáadása */
 }
+
+
+
 
 @media (max-width: 1000px) {
   .My-work{
